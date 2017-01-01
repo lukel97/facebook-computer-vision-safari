@@ -58,6 +58,7 @@ const emojis = {
 	"glasses": "👓",
 	"instrument": "🎸",
 	"stage": "🎭",
+	"fireworks": "🎆",
 	"person": "👤",
 	"people": "👥",
 }
@@ -65,21 +66,22 @@ const emojis = {
 function addComputerVisionTags() {
 	const TAG_PREFIX = "Image may contain: ";
 	
-	for(var img of document.getElementsByTagName('img')) {
-		if (img.hasAttribute("data-prev-alt") && img.getAttribute("data-prev-alt") === img.getAttribute("alt"))
-			continue;
-		
+	const newImgs = [...document.getElementsByTagName('img')].filter(img => img.getAttribute("data-prev-alt") !== img.getAttribute("alt"));
+	
+	for(var img of newImgs) {
+		//Remember that we've added the tags to this image
 		img.setAttribute("data-prev-alt", img.alt);
 		
 		if(img.alt.startsWith(TAG_PREFIX)) {
 			const tags = img.alt.slice(TAG_PREFIX.length).split(/, | and /);
-			let html = "<ul class='computer-vision'>";
 			
+			var html = "<ul class='computer-vision'>";
 			html += "<li><b>Image may contain</b></li>";
 			
 			for(var tag of tags) {
 				let prefix = "";
 				
+				//Match an emoji prefix
 				prefix = emojis[Object.keys(emojis).find(k => tag.includes(k))] || "";
 				
 				html += `<li>${prefix} ${tag}</li>`;
