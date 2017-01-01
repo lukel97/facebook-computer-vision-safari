@@ -1,0 +1,18 @@
+ul.computer-vision {
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	padding: 6px !important;
+	font-size: 12px;
+	overflow: scroll;
+	line-height: 1.8;
+	-webkit-backdrop-filter: blur(10px);
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	opacity: 0;
+	transition: opacity 0.1s linear;
+}
+
+a:hover ul.computer-vision {
+	opacity: 1;
+}
