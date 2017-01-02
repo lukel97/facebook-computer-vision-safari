@@ -59,6 +59,11 @@ const emojis = {
 	"instrument": "🎸",
 	"stage": "🎭",
 	"fireworks": "🎆",
+	"pizza": "🍕",
+	"taco": "🌮",
+	"burrito": "🌯",
+	"burger": "🍔",
+	"hotdog": "🌭",
 	"person": "👤",
 	"people": "👥",
 }
