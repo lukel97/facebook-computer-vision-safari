@@ -64,8 +64,8 @@ const emojis = {
 	"burrito": "🌯",
 	"burger": "🍔",
 	"hotdog": "🌭",
-  "pizza": "🍕",
-  "close-up": "🔎",
+ 	"pizza": "🍕",
+ 	"close-up": "🔎",
 	"person": "👤",
 	"people": "👥",
 }
